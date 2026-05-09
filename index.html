@@ -46,52 +46,166 @@
     <section id="about" class="section">
       <h2>About Me</h2>
       <p>
-        I'm a Computer Science student who enjoys creating projects that combine logic, creativity,
-        and design. I like working on games, software tools, and websites because they let me turn
-        ideas into something real and interactive.
+        I'm Taym Atrach, a dedicated student at McGill University, where I am pursuing a double major in Computer Science and Hispanic Studies withn a supplemental Computer Science minor. Previously, I specialized in Interactive Media Arts at Dawson College. Since I was young, I've harbored a profound passion for creation.
+My journey into the realm of video game development began in childhood, igniting a flame within me that continues to burn brightly today. My ultimate aspiration is to provide others with an escape from the rigors of reality, offering them immersive experiences that captivate their imagination and momentarily transport them to new worlds. Through my studies in computer science, I focus on the technical and creative aspects of game development, such as game engines,  user interfaces, level design, gameplay mechanics and much more, all while applying my creative vision to enhance user engagement.
+In my creative pursuits, I strive to craft original and compelling experiences by seamlessly blending technical problem-solving with artistic storytelling. Collaboration fuels my creative process, as I relish the opportunity to work alongside fellow creatives, sharing ideas and learning from others. By embracing diverse perspectives and ideas, I continually expand my horizons, pushing the boundaries of what's possible in game development and immersive digital environments.
       </p>
     </section>
 
-    <section id="projects" class="section">
-      <h2>Projects</h2>
-      <div class="project-grid">
-        <article class="project-card">
-          <p class="badge">🏆 Award Winner</p>
-          <h3>Your Game Title</h3>
-          <p>
-            A game project that won a title/award. Built with Unreal Engine or Unity.
-          </p>
-          <div class="tech-list">
-            <span>Unreal Engine</span>
-            <span>Blueprints</span>
-            <span>Blender</span>
-          </div>
-          <div class="project-links">
-            <a href="#">Play on itch.io</a>
-            <a href="#">GitHub</a>
-          </div>
-        </article>
+   <section id="projects" class="section">
+  <h2>Projects</h2>
 
-        <article class="project-card">
-          <h3>Portfolio Website</h3>
-          <p>
-            A personal portfolio website built from scratch to showcase my projects and skills.
-          </p>
-          <div class="tech-list">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-          </div>
-          <div class="project-links">
-            <a href="#">Live Site</a>
-            <a href="#">GitHub</a>
-          </div>
-        </article>
+  <div class="project-grid">
 
-        <article class="project-card">
-          <h3>Software Project</h3>
-          <p>
-            A programming project focused on problem solving, logic, and clean code structure.
-          </p>
+   <!-- Operation: Melodica -->
+<div class="project-card melodica-card" onclick="openMelodicaPopup()">
+  <img
+    src="Images/Operation_Melodica.jpg"
+    alt="Operation: Melodica screenshot"
+    class="project-image"
+  />
+
+  <div class="project-content">
+    <p class="badge">🏆 Award Winner</p>
+    <h3>Operation: Melodica</h3>
+    <p>
+      Award-winning Unity game that combines music, action, and level design.
+    </p>
+
+    <div class="tech-list">
+      <span>Unity</span>
+      <span>C#</span>
+      <span>Game Design</span>
+    </div>
+  </div>
+</div>
+
+    <!-- Final Gamble  -->
+    <a href="projects/portfolio-website.html" class="project-card finalgamble">
+      <img
+        src="Images/Final_Gamble.png"
+        alt="Portfolio website screenshot"
+        class="project-image"
+      />
+
+      <div class="project-content">
+        <h3>Final Gamble</h3>
+        <p> A narrative-driven horror experience built in Unreal Engine 5. </p>
+          
+
+        <div class="tech-list">
+          <span>Unreal Engine </span>
+          <span>C++</span>
+          <span>Blueprints</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- He'll Hunt -->
+    <a href="https://moch727.itch.io/hell-hunt"
+   class="project-card hellhunt"
+   target="_blank">
+      <img
+        src="Images/hellhunt.png"
+        alt="Software project screenshot"
+        class="project-image"
+      />
+
+      <div class="project-content">
+        <h3>He'll Hunt</h3>
+        <p>
+          <b>McGameJam 26</b> Submission
+        </p>
+
+        <div class="tech-list">
+          <span>Unity</span>
+          <span>C#</span>
+          
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+<div id="melodica-popup" class="popup-overlay">
+  <div class="popup-card">
+    <button class="close-btn" onclick="closeMelodicaPopup()">×</button>
+
+   <video class="popup-video" autoplay muted loop playsinline controls>
+  <source src="Videos/Operation_Melodica_Trailer.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+    <div class="popup-content">
+  <p class="badge">🏆 Award Winner</p>
+  <h2>Operation: Melodica</h2>
+
+  <p class="popup-summary">
+    Operation: Melodica is an exploration rhythm game developed as a submission for McGill Game Studios 2026 and awarded Third Place. Set in a distant star system where music lies at the heart of civilization, players travel across unique planets to liberate their citizens from a mysterious force that has silenced their world. By exploring vibrant environments and defeating planetary rulers through rhythm-based battles, players restore harmony to the galaxy and discover whether they have what it takes to overcome the Great Evil.
+  </p>
+
+  <div class="popup-info-grid">
+    <div class="info-box">
+      <h3>Overview</h3>
+      <p>
+        Operation: Melodica is an exploration rhythm game in which players journey across planets and engage in rhythm-based battles to free a star system from a mysterious force that has silenced its music.
+      </p>
+    </div>
+
+    <div class="info-box">
+      <h3>My Role</h3>
+      <p>
+       As the Game Design Lead, I was responsible for shaping the core gameplay experience and guiding the overall creative vision of the project. I also contributed to gameplay programming, level design, environmental art, and final polish to ensure the game delivered a cohesive and engaging experience.
+    </div>
+
+    <div class="info-box">
+      <h3>What I Learned</h3>
+      <p>
+       This project significantly deepened my understanding of the Unity game engine and strengthened my C# programming skills. Over the course of a 10-week development cycle, I gained valuable experience collaborating with a multidisciplinary team, working under tight deadlines, and refining ideas through an iterative game design process.
+      </p>
+    </div>
+  </div>
+
+  <div class="popup-tech-section">
+    <h3>Technologies Used</h3>
+    <div class="tech-list">
+      <span>Unity</span>
+      <span>C#</span>
+      <span>Blender</span>
+      
+    </div>
+  </div>
+
+  <div class="popup-cta">
+    <a
+      href="https://esmely11.itch.io/operation-melodica"
+      target="_blank"
+      class="play-button"
+    >
+      Play on itch.io
+    </a>
+  </div>
+</div>
+
+<script>
+  function openMelodicaPopup() {
+    document.getElementById("melodica-popup").classList.add("active");
+  }
+
+  function closeMelodicaPopup() {
+    document.getElementById("melodica-popup").classList.remove("active");
+  }
+
+  window.addEventListener("click", function (e) {
+    const popup = document.getElementById("melodica-popup");
+    if (e.target === popup) {
+      closeMelodicaPopup();
+    }
+  });
+</script>
+
+</section>
+</main>
+</body>
 </html>
 
