@@ -1,6 +1,3 @@
-
-
-
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
@@ -39,173 +36,334 @@
       </div>
 
       <div class="hero-image">
-        <img src="assets/profile.jpg" alt="Profile photo" />
+        <div class="visual-orb">
+          <div class="wireframe-cube">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="about" class="section">
       <h2>About Me</h2>
       <p>
-        I'm Taym Atrach, a dedicated student at McGill University, where I am pursuing a double major in Computer Science and Hispanic Studies withn a supplemental Computer Science minor. Previously, I specialized in Interactive Media Arts at Dawson College. Since I was young, I've harbored a profound passion for creation.
-My journey into the realm of video game development began in childhood, igniting a flame within me that continues to burn brightly today. My ultimate aspiration is to provide others with an escape from the rigors of reality, offering them immersive experiences that captivate their imagination and momentarily transport them to new worlds. Through my studies in computer science, I focus on the technical and creative aspects of game development, such as game engines,  user interfaces, level design, gameplay mechanics and much more, all while applying my creative vision to enhance user engagement.
-In my creative pursuits, I strive to craft original and compelling experiences by seamlessly blending technical problem-solving with artistic storytelling. Collaboration fuels my creative process, as I relish the opportunity to work alongside fellow creatives, sharing ideas and learning from others. By embracing diverse perspectives and ideas, I continually expand my horizons, pushing the boundaries of what's possible in game development and immersive digital environments.
+        I'm Taym Atrach, a dedicated student at McGill University, where I am pursuing a double major in Computer Science and Hispanic Studies with a supplemental Computer Science minor. Previously, I specialized in Interactive Media Arts at Dawson College. Since I was young, I've had a strong passion for creation.
+        My journey into video game development began in childhood, and that passion continues to grow today. My goal is to create immersive experiences that allow people to escape reality for a moment and enter new worlds. Through my studies in computer science, I focus on the technical and creative sides of game development, including game engines, user interfaces, level design, gameplay mechanics, and interactive systems.
+        In my creative work, I aim to build original experiences by combining technical problem-solving with artistic storytelling. Collaboration is also an important part of my process because I enjoy working with other creatives, sharing ideas, and learning from different perspectives.
       </p>
     </section>
 
-   <section id="projects" class="section">
-  <h2>Projects</h2>
+    <section id="projects" class="section">
+      <h2>Projects</h2>
 
-  <div class="project-grid">
+      <div class="project-grid">
 
-   <!-- Operation: Melodica -->
-<div class="project-card melodica-card" onclick="openMelodicaPopup()">
-  <img
-    src="Images/Operation_Melodica.jpg"
-    alt="Operation: Melodica screenshot"
-    class="project-image"
-  />
+        <!-- Operation: Melodica -->
+        <div class="project-card melodica-card" onclick="openMelodicaPopup()">
+          <img
+            src="Images/Operation_Melodica.jpg"
+            alt="Operation: Melodica screenshot"
+            class="project-image"
+          />
 
-  <div class="project-content">
-    <p class="badge">🏆 Award Winner</p>
-    <h3>Operation: Melodica</h3>
-    <p>
-      Award-winning Unity game that combines music, action, and level design.
-    </p>
+          <div class="project-content">
+            <p class="badge">🏆 Award Winner</p>
+            <h3>Operation: Melodica</h3>
+            <p>
+              Award-winning Unity game that combines music, action, and level design.
+            </p>
 
-    <div class="tech-list">
-      <span>Unity</span>
-      <span>C#</span>
-      <span>Game Design</span>
-    </div>
-  </div>
-</div>
+            <div class="tech-list">
+              <span>Unity</span>
+              <span>C#</span>
+              <span>Game Design</span>
+            </div>
+          </div>
+        </div>
 
-    <!-- Final Gamble  -->
-    <a href="projects/portfolio-website.html" class="project-card finalgamble">
-      <img
-        src="Images/Final_Gamble.png"
-        alt="Portfolio website screenshot"
-        class="project-image"
-      />
+        <!-- Final Gamble -->
+        <div class="project-card finalgamble" onclick="openFinalGamblePopup()">
+          <img
+            src="Images/Final_Gamble.png"
+            alt="Final Gamble screenshot"
+            class="project-image"
+          />
 
-      <div class="project-content">
-        <h3>Final Gamble</h3>
-        <p> A narrative-driven horror experience built in Unreal Engine 5. </p>
-          
+          <div class="project-content">
+            <h3>Final Gamble</h3>
+            <p>A narrative-driven horror experience built in Unreal Engine 5.</p>
 
-        <div class="tech-list">
-          <span>Unreal Engine </span>
-          <span>C++</span>
-          <span>Blueprints</span>
+            <div class="tech-list">
+              <span>Unreal Engine 5</span>
+              <span>C++</span>
+              <span>Blueprints</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- He'll Hunt -->
+        <div class="project-card hellhunt" onclick="openHellHuntPopup()">
+          <img
+            src="Images/hellhunt.png"
+            alt="He'll Hunt screenshot"
+            class="project-image"
+          />
+
+          <div class="project-content">
+            <h3>He'll Hunt</h3>
+            <p>
+              <b>McGameJam 2026</b> Submission
+            </p>
+
+            <div class="tech-list">
+              <span>Unity</span>
+              <span>C#</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Operation: Melodica Popup -->
+      <div id="melodica-popup" class="popup-overlay">
+        <div class="popup-card">
+          <button class="close-btn" onclick="closeMelodicaPopup()">×</button>
+
+          <video class="popup-video" autoplay muted loop playsinline controls>
+            <source src="Videos/Operation_Melodica_Trailer.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+
+          <div class="popup-content">
+            <p class="badge">🏆 Award Winner</p>
+            <h2>Operation: Melodica</h2>
+
+            <p class="popup-summary">
+              Operation: Melodica is an exploration rhythm game developed as a submission for McGill Game Studios 2026 and awarded Third Place. Set in a distant star system where music lies at the heart of civilization, players travel across unique planets to liberate their citizens from a mysterious force that has silenced their world.
+            </p>
+
+            <div class="popup-info-grid">
+              <div class="info-box">
+                <h3>Overview</h3>
+                <p>
+                  Operation: Melodica is an exploration rhythm game where players journey across planets and engage in rhythm-based battles to restore music to a silenced star system.
+                </p>
+              </div>
+
+              <div class="info-box">
+                <h3>My Role</h3>
+                <p>
+                  As the Game Design Lead, I helped shape the core gameplay experience and creative direction. I also contributed to gameplay programming, level design, environmental art, and final polish.
+                </p>
+              </div>
+
+              <div class="info-box">
+                <h3>What I Learned</h3>
+                <p>
+                  This project strengthened my Unity and C# skills while giving me experience working with a multidisciplinary team under tight deadlines.
+                </p>
+              </div>
+            </div>
+
+            <div class="popup-tech-section">
+              <h3>Technologies Used</h3>
+              <div class="tech-list">
+                <span>Unity</span>
+                <span>C#</span>
+                <span>Blender</span>
+              </div>
+            </div>
+
+            <div class="popup-cta">
+              <a
+                href="https://esmely11.itch.io/operation-melodica"
+                target="_blank"
+                class="play-button"
+              >
+                Play on itch.io
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-    </a>
 
-    <!-- He'll Hunt -->
-    <a href="https://moch727.itch.io/hell-hunt"
-   class="project-card hellhunt"
-   target="_blank">
-      <img
-        src="Images/hellhunt.png"
-        alt="Software project screenshot"
-        class="project-image"
-      />
+      <!-- Final Gamble Popup -->
+      <div id="finalgamble-popup" class="popup-overlay">
+        <div class="popup-card">
+          <button class="close-btn" onclick="closeFinalGamblePopup()">×</button>
 
-      <div class="project-content">
-        <h3>He'll Hunt</h3>
-        <p>
-          <b>McGameJam 26</b> Submission
-        </p>
+          <img
+            src="Images/Final_Gamble.png"
+            alt="Final Gamble"
+            class="popup-video"
+          />
 
-        <div class="tech-list">
-          <span>Unity</span>
-          <span>C#</span>
-          
+          <div class="popup-content">
+            <h2>Final Gamble</h2>
+
+            <p class="popup-summary">
+               Final Gamble is an indie psychological horror game set in a seemingly luxurious casino. What begins as a harmless visit quickly turns into a tense and unsettling experience as players uncover the disturbing secrets hidden behind the bright lights and polished atmosphere. By combining environmental storytelling, suspense, and AI-driven encounters, the game creates a strong sense of isolation and uncertainty.
+            </p>
+
+            <div class="popup-info-grid">
+              <div class="info-box">
+                <h3>Overview</h3>
+                <p>
+                 Final Gamble is a narrative-driven horror experience in which players explore an abandoned casino that slowly reveals a darker reality. The contrast between the elegant setting and the underlying sense of danger creates a unique and memorable horror experience.
+                </p>
+              </div>
+
+              <div class="info-box">
+                <h3>My Role</h3>
+                <p>
+                   I designed and developed the project alongside a teammate, contributing to gameplay programming, level design, monster AI, and the overall atmosphere and pacing of the experience.
+                </p>
+              </div>
+
+              <div class="info-box">
+                <h3>What I Learned</h3>
+                <p>
+                  This project taught me how to define a realistic scope, manage time effectively, and collaborate with a teammate while balancing a full academic workload. It also significantly strengthened my Unreal Engine, C++, Blueprint scripting, and game design skills.
+                </p>
+              </div>
+            </div>
+
+            <div class="popup-tech-section">
+              <h3>Technologies Used</h3>
+              <div class="tech-list">
+                <span>Unreal Engine 5</span>
+                <span>C++</span>
+                <span>Blueprints</span>
+              </div>
+            </div>
+
+            <div class="popup-cta">
+  <a
+    href="https://www.youtube.com/watch?v=MKypUu9wRCs"
+    target="_blank"
+    class="play-button"
+  >
+    Watch Gameplay
+  </a>
+</div>
+          </div>
         </div>
       </div>
-    </a>
 
-  </div>
+      <!-- He'll Hunt Popup -->
+      <div id="hellhunt-popup" class="popup-overlay">
+        <div class="popup-card">
+          <button class="close-btn" onclick="closeHellHuntPopup()">×</button>
 
-<div id="melodica-popup" class="popup-overlay">
-  <div class="popup-card">
-    <button class="close-btn" onclick="closeMelodicaPopup()">×</button>
+          <img
+            src="Images/hellhunt.png"
+            alt="He'll Hunt"
+            class="popup-video"
+          />
 
-   <video class="popup-video" autoplay muted loop playsinline controls>
-  <source src="Videos/Operation_Melodica_Trailer.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+          <div class="popup-content">
+            <h2>He'll Hunt</h2>
 
-    <div class="popup-content">
-  <p class="badge">🏆 Award Winner</p>
-  <h2>Operation: Melodica</h2>
+            <p class="popup-summary">
+               He'll Hunt is a local two-player competitive game created for my first-ever game jam, McGameJam 2026. Set in Hell, players battle to obtain the power to become human and escape to Heaven through a series of portals. The player who holds this power becomes the target of the other, creating a fast-paced experience centered around pursuit, strategy, and constant role reversals.
+            </p>
 
-  <p class="popup-summary">
-    Operation: Melodica is an exploration rhythm game developed as a submission for McGill Game Studios 2026 and awarded Third Place. Set in a distant star system where music lies at the heart of civilization, players travel across unique planets to liberate their citizens from a mysterious force that has silenced their world. By exploring vibrant environments and defeating planetary rulers through rhythm-based battles, players restore harmony to the galaxy and discover whether they have what it takes to overcome the Great Evil.
-  </p>
+            <div class="popup-info-grid">
+              <div class="info-box">
+                <h3>Overview</h3>
+                <p>
+                 He'll Hunt is an asymmetrical two-player game where one player attempts to reach portals and escape, while the other tries to eliminate them and steal the power for themselves. The hunter can become the hunted at any moment, leading to tense and unpredictable matches.
+                </p>
+              </div>
 
-  <div class="popup-info-grid">
-    <div class="info-box">
-      <h3>Overview</h3>
-      <p>
-        Operation: Melodica is an exploration rhythm game in which players journey across planets and engage in rhythm-based battles to free a star system from a mysterious force that has silenced its music.
-      </p>
-    </div>
+              <div class="info-box">
+                <h3>My Role</h3>
+                <p>
+                   I worked with a small team during McGameJam 2026, contributing to gameplay programming, game design, and overall polish. Together, we transformed a simple concept into a fully playable prototype within a very limited development window.
+                </p>
+              </div>
 
-    <div class="info-box">
-      <h3>My Role</h3>
-      <p>
-       As the Game Design Lead, I was responsible for shaping the core gameplay experience and guiding the overall creative vision of the project. I also contributed to gameplay programming, level design, environmental art, and final polish to ensure the game delivered a cohesive and engaging experience.
-    </div>
+              <div class="info-box">
+                <h3>What I Learned</h3>
+                <p>
+                  As my first game jam, this project taught me how to prototype quickly, prioritize the most important features, and make design decisions under tight deadlines. It also showed me the value of teamwork, communication, and adapting ideas based on what was realistically achievable in a short period of time.
+                </p>
+              </div>
+            </div>
 
-    <div class="info-box">
-      <h3>What I Learned</h3>
-      <p>
-       This project significantly deepened my understanding of the Unity game engine and strengthened my C# programming skills. Over the course of a 10-week development cycle, I gained valuable experience collaborating with a multidisciplinary team, working under tight deadlines, and refining ideas through an iterative game design process.
-      </p>
-    </div>
-  </div>
+            <div class="popup-tech-section">
+              <h3>Technologies Used</h3>
+              <div class="tech-list">
+                <span>Unity</span>
+                <span>C#</span>
+              </div>
+            </div>
 
-  <div class="popup-tech-section">
-    <h3>Technologies Used</h3>
-    <div class="tech-list">
-      <span>Unity</span>
-      <span>C#</span>
-      <span>Blender</span>
-      
-    </div>
-  </div>
+            <div class="popup-cta">
+              <a
+                href="https://moch727.itch.io/hell-hunt"
+                target="_blank"
+                class="play-button"
+              >
+                Play on itch.io
+              </a>
+            </div>
 
-  <div class="popup-cta">
-    <a
-      href="https://esmely11.itch.io/operation-melodica"
-      target="_blank"
-      class="play-button"
-    >
-      Play on itch.io
-    </a>
-  </div>
-</div>
+            
+          </div>
+        </div>
+      </div>
 
-<script>
-  function openMelodicaPopup() {
-    document.getElementById("melodica-popup").classList.add("active");
-  }
+    </section>
+  </main>
 
-  function closeMelodicaPopup() {
-    document.getElementById("melodica-popup").classList.remove("active");
-  }
-
-  window.addEventListener("click", function (e) {
-    const popup = document.getElementById("melodica-popup");
-    if (e.target === popup) {
-      closeMelodicaPopup();
+  <script>
+    function openMelodicaPopup() {
+      document.getElementById("melodica-popup").classList.add("active");
     }
-  });
-</script>
 
-</section>
-</main>
+    function closeMelodicaPopup() {
+      document.getElementById("melodica-popup").classList.remove("active");
+    }
+
+    function openFinalGamblePopup() {
+      document.getElementById("finalgamble-popup").classList.add("active");
+    }
+
+    function closeFinalGamblePopup() {
+      document.getElementById("finalgamble-popup").classList.remove("active");
+    }
+
+    function openHellHuntPopup() {
+      document.getElementById("hellhunt-popup").classList.add("active");
+    }
+
+    function closeHellHuntPopup() {
+      document.getElementById("hellhunt-popup").classList.remove("active");
+    }
+
+    window.addEventListener("click", function (e) {
+      const melodicaPopup = document.getElementById("melodica-popup");
+      const finalGamblePopup = document.getElementById("finalgamble-popup");
+      const hellHuntPopup = document.getElementById("hellhunt-popup");
+
+      if (e.target === melodicaPopup) {
+        closeMelodicaPopup();
+      }
+
+      if (e.target === finalGamblePopup) {
+        closeFinalGamblePopup();
+      }
+
+      if (e.target === hellHuntPopup) {
+        closeHellHuntPopup();
+      }
+    });
+  </script>
 </body>
 </html>
-
