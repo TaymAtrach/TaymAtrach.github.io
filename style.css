@@ -317,6 +317,10 @@ header {
   max-width: 800px;
 }
 
+.section p + p {
+  margin-top: 16px;
+}
+
 /* =========================
    PROJECT CARDS
 ========================= */
