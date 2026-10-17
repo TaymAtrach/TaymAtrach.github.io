@@ -139,19 +139,35 @@ Working on playable projects under tight deadlines has also made testing a natur
               <span>Unity</span>
               <span>C#</span>
               <span>Game Design</span>
+              
             </div>
           </div>
         </div>
 
-        <!-- Game Four -->
-<div class="project-card game4-card" onclick="openPopup('game4-popup')">
-  <img src="Images/game4.png" alt="Game Four screenshot" class="project-image" />
+ <!-- Which Came First? -->
+<div class="project-card whichcamefirst-card" onclick="openPopup('whichcamefirst-popup')">
+  <img src="Images/Which_Came_First.png" alt="Which Came First? screenshot" class="project-image" />
   <div class="project-content">
-    <h3>Game Four</h3>
-    <p>Short one-line description.</p>
+    <p class="badge">🏆 4th Place</p>
+    <h3>Which Came First?</h3>
+    <p>Local multiplayer game built for <b>Cosmic Jam 2026</b> with the theme: Orbit</p>
     <div class="tech-list">
       <span>Unity</span>
       <span>C#</span>
+      
+    </div>
+  </div>
+</div>
+
+<!-- Bal Arena -->
+<div class="project-card balarena-card" onclick="openPopup('balarena-popup')">
+  <img src="Images/bal_arena.png" alt="Bal Arena screenshot" class="project-image" />
+  <div class="project-content">
+    <h3>Bal Arena</h3>
+    <p>2D fighting game made for the <b>Juniper Dev GameJam</b> with the theme: Spin To Win</p>
+    <div class="tech-list">
+      <span>Unity</span>
+      <span>Blender</span>
     </div>
   </div>
 </div>
@@ -389,51 +405,131 @@ Working on playable projects under tight deadlines has also made testing a natur
         </div>
       </div>
 
+      <!-- Which Came First? Popup -->
+<div id="whichcamefirst-popup" class="popup-overlay">
+  <div class="popup-card">
+    <button class="close-btn" onclick="closePopup('whichcamefirst-popup')">×</button>
+
+    <img src="Images/Which_Came_First_Header.png" alt="Which Came First?" class="popup-video" />
+
+    <div class="popup-content">
+      <h2>Which Came First?</h2>
+
+      <p class="popup-summary">For years and years, scientists and commonfolk alike have wondered of the origins of a certain bipedal feathered friend, the chicken. Indeed, we still do not know which came first between the bird or the egg... 
+
+Such questions have produced a fight of cosmic levels... between a WhotsOpp Chicken and a WhotsOpp Egg?! Come on, we've GOT to see how it ends!</p>
+
+      <div class="popup-info-grid">
+        <div class="info-box">
+          <h3>Overview</h3>
+          <p>Which Came First? is a local two-player competitive game that settles the age-old question the only way possible: a fight. One player controls the WhatsOpp Egg and the other controls the WhatsOpp Chicken, and the two battle head-to-head to prove which one came first.</p>
+        </div>
+        <div class="info-box">
+          <h3>My Role</h3>
+          <p>As a programmer on the team, I developed the game manager that controls core game flow and state, implemented controller support for responsive gamepad input, and contributed to the project's visual effects (VFX).</p>
+        </div>
+        <div class="info-box">
+          <h3>What I Learned</h3>
+          <p> This project strengthened my gameplay programming skills, particularly in structuring a game manager to coordinate core systems and game state. Implementing controller support taught me how to design input handling that feels responsive across different devices, and working on VFX gave me a better understanding of how visual feedback improves game feel and player experience.</p>
+        </div>
+      </div>
+
+      <div class="popup-tech-section">
+        <h3>Technologies Used</h3>
+        <div class="tech-list">
+          <span>Unity</span>
+          <span>C#</span>
+        </div>
+      </div>
+
+      <div class="popup-cta">
+        <a href="https://esmely11.itch.io/chicken-or-egg" target="_blank" class="play-button">Play on itch.io</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bal Arena Popup -->
+<div id="balarena-popup" class="popup-overlay">
+  <div class="popup-card">
+      <video class="popup-video" autoplay muted loop playsinline controls>
+            <source src="Videos/BalArena Trailer.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+    <button class="close-btn" onclick="closePopup('balarena-popup')">×</button>
+
+    
+
+    <div class="popup-content">
+      <h2>Bal Arena</h2>
+
+      <p class="popup-summary">Twirl into the spotlight as a ballerina and show everyone who's the star of the show!</p>
+
+      <div class="popup-info-grid">
+        <div class="info-box">
+          <h3>Overview</h3>
+          <p> In Bal Arena, you play as a ballerina competing against rival dancers for control of the spotlight. Fight off your opponents to keep the stage to yourself, but be careful: The spotlight will randomly turn on! so you'll need to balance attacking with staying in position.</p>
+        </div>
+        <div class="info-box">
+          <h3>My Role</h3>
+          <p> I was responsible for the game's environment art and level design. I modeled the assets and built the entire arena from start to finish, designing the layout to support the spotlight-focused gameplay.</p>
+        </div>
+        <div class="info-box">
+          <h3>What I Learned</h3>
+          <p> This project taught me how to design within technical constraints and collaborate closely with programmers so the level supported the gameplay. It also helped me improve my 3D modeling and game design skills. I learned to stay flexible and iterate on my work, since not every idea makes it into the final game and the priority is always what serves the overall experience.</p>
+        </div>
+      </div>
+
+      <div class="popup-tech-section">
+        <h3>Technologies Used</h3>
+        <div class="tech-list">
+          <span>Unity</span>
+          <span>Blender</span>
+        </div>
+      </div>
+
+      <div class="popup-cta">
+        <a href="https://mokoolb.itch.io/bal-arena" target="_blank" class="play-button">Play on itch.io</a>
+      </div>
+    </div>
+  </div>
+</div>
+
     </section>
   </main>
 
   <script>
-    function openMelodicaPopup() {
-      document.getElementById("melodica-popup").classList.add("active");
+  function openPopup(id) {
+    document.getElementById(id).classList.add("active");
+  }
+
+  function closePopup(id) {
+    document.getElementById(id).classList.remove("active");
+  }
+
+  // Existing games (so current onclick attributes keep working)
+  const openMelodicaPopup = () => openPopup("melodica-popup");
+  const closeMelodicaPopup = () => closePopup("melodica-popup");
+  const openFinalGamblePopup = () => openPopup("finalgamble-popup");
+  const closeFinalGamblePopup = () => closePopup("finalgamble-popup");
+  const openHellHuntPopup = () => openPopup("hellhunt-popup");
+  const closeHellHuntPopup = () => closePopup("hellhunt-popup");
+
+  // Click outside any popup to close it
+  window.addEventListener("click", function (e) {
+    if (e.target.classList.contains("popup-overlay")) {
+      e.target.classList.remove("active");
     }
+  });
 
-    function closeMelodicaPopup() {
-      document.getElementById("melodica-popup").classList.remove("active");
+  // Escape key closes popups too
+  window.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      document.querySelectorAll(".popup-overlay.active")
+        .forEach(p => p.classList.remove("active"));
     }
+  });
+</script>
 
-    function openFinalGamblePopup() {
-      document.getElementById("finalgamble-popup").classList.add("active");
-    }
-
-    function closeFinalGamblePopup() {
-      document.getElementById("finalgamble-popup").classList.remove("active");
-    }
-
-    function openHellHuntPopup() {
-      document.getElementById("hellhunt-popup").classList.add("active");
-    }
-
-    function closeHellHuntPopup() {
-      document.getElementById("hellhunt-popup").classList.remove("active");
-    }
-
-    window.addEventListener("click", function (e) {
-      const melodicaPopup = document.getElementById("melodica-popup");
-      const finalGamblePopup = document.getElementById("finalgamble-popup");
-      const hellHuntPopup = document.getElementById("hellhunt-popup");
-
-      if (e.target === melodicaPopup) {
-        closeMelodicaPopup();
-      }
-
-      if (e.target === finalGamblePopup) {
-        closeFinalGamblePopup();
-      }
-
-      if (e.target === hellHuntPopup) {
-        closeHellHuntPopup();
-      }
-    });
-  </script>
 </body>
 </html>

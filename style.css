@@ -4,48 +4,74 @@
   box-sizing: border-box;
 }
 
-.navbar {
-  max-width: 1200px;
-}
-
-.nav-links a {
-  position: relative;
-}
-
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--accent);
-  transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
 :root {
-   --bg: #050505;
+  --bg: #050505;
   --panel: #020617;
   --text: #f8fafc;
   --muted: #cbd5e1;
   --soft-border: rgba(255, 255, 255, 0.1);
   --accent: rgb(251, 255, 0);
 
-  --melodica: #a855f7;
-  --melodica-light: #c084fc;
-  --melodica-dark: #7e22ce;
+  /* Operation: Melodica (deep space) */
+  --melodica: #8b5cf6;
+  --melodica-light: #c4b5fd;
+  --melodica-dark: #4c1d95;
+  --melodica-cyan: #22d3ee;
 
+  /* Final Gamble (blood red) */
   --final: #ef4444;
   --final-mid: #b91c1c;
   --final-dark: #7f1d1d;
 
-  --hell: #f97316;
-  --hell-light: #fb923c;
-  --hell-dark: #ea580c;
+  /* He'll Hunt (hellfire) */
+  --hell: #ff4500;
+  --hell-light: #ff9a3c;
+  --hell-dark: #991b1b;
+
+  /* Which Came First? (neon green galaxy) */
+  --wcf: #39ff14;
+  --wcf-light: #b6ff9e;
+  --wcf-dark: #16a34a;
+
+  /* Bal Arena (coquette pink + cherry red) */
+  --bal: #f472b6;
+  --bal-light: #fbcfe8;
+  --bal-dark: #be185d;
+  --bal-red: #e11d48;
+  --bal-cream: #fff1f2;
+
+  /* Reusable decorative layers */
+  --stars-a:
+    radial-gradient(circle at 20% 25%, rgba(255, 255, 255, 0.9) 0 1px, transparent 2px),
+    radial-gradient(circle at 70% 15%, rgba(255, 255, 255, 0.7) 0 1px, transparent 2px),
+    radial-gradient(circle at 85% 60%, rgba(255, 255, 255, 0.8) 0 1px, transparent 2px),
+    radial-gradient(circle at 35% 80%, rgba(255, 255, 255, 0.6) 0 1px, transparent 2px),
+    radial-gradient(circle at 55% 50%, rgba(255, 255, 255, 0.5) 0 1px, transparent 2px);
+
+  --stars-b:
+    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.8) 0 1px, transparent 2px),
+    radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.6) 0 1px, transparent 2px),
+    radial-gradient(circle at 90% 70%, rgba(255, 255, 255, 0.7) 0 1px, transparent 2px),
+    radial-gradient(circle at 10% 85%, rgba(255, 255, 255, 0.5) 0 1px, transparent 2px),
+    radial-gradient(circle at 45% 35%, rgba(255, 255, 255, 0.5) 0 1px, transparent 2px);
+
+  --pearls:
+    radial-gradient(circle at 18% 22%, rgba(255, 228, 236, 0.9) 0 2px, transparent 3px),
+    radial-gradient(circle at 78% 18%, rgba(255, 228, 236, 0.7) 0 2px, transparent 3px),
+    radial-gradient(circle at 88% 62%, rgba(255, 228, 236, 0.8) 0 2px, transparent 3px),
+    radial-gradient(circle at 30% 78%, rgba(255, 228, 236, 0.6) 0 2px, transparent 3px),
+    radial-gradient(circle at 55% 45%, rgba(255, 228, 236, 0.5) 0 1.5px, transparent 3px);
+
+  --gingham:
+    repeating-linear-gradient(0deg, rgba(244, 114, 182, 0.06) 0 14px, transparent 14px 28px),
+    repeating-linear-gradient(90deg, rgba(244, 114, 182, 0.06) 0 14px, transparent 14px 28px);
+
+  --embers:
+    radial-gradient(circle at 15% 78%, rgba(255, 160, 60, 0.9) 0 1.5px, transparent 3px),
+    radial-gradient(circle at 35% 62%, rgba(255, 110, 30, 0.8) 0 1.5px, transparent 3px),
+    radial-gradient(circle at 62% 85%, rgba(255, 190, 80, 0.9) 0 1.5px, transparent 3px),
+    radial-gradient(circle at 82% 68%, rgba(255, 120, 40, 0.8) 0 1.5px, transparent 3px),
+    radial-gradient(circle at 92% 88%, rgba(255, 170, 60, 0.7) 0 1.5px, transparent 3px);
 }
 
 html {
@@ -65,9 +91,9 @@ a {
 }
 
 .section:nth-of-type(even) {
-  background: rgba(255,255,255,0.015);
-  border-top: 1px solid rgba(255,255,255,0.03);
-  border-bottom: 1px solid rgba(255,255,255,0.03);
+  background: rgba(255, 255, 255, 0.015);
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 /* =========================
@@ -110,16 +136,34 @@ header {
 }
 
 .nav-links a {
+  position: relative;
   color: var(--muted);
   transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
   color: white;
 }
 
+.nav-links a:hover::after {
+  width: 100%;
+}
 
-/* SKILLS */
+/* =========================
+   SKILLS
+========================= */
+
 #skills {
   scroll-margin-top: 120px;
 }
@@ -132,7 +176,7 @@ header {
 }
 
 .skill-card {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--soft-border);
   border-radius: 20px;
   padding: 25px;
@@ -346,7 +390,7 @@ header {
 
 .project-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(251,255,0,0.35);
+  border-color: rgba(251, 255, 0, 0.35);
 }
 
 .project-image {
@@ -418,18 +462,24 @@ header {
   text-decoration: underline;
 }
 
-/* Individual project card hover themes */
+/* =========================
+   PROJECT CARD HOVER THEMES
+========================= */
 
+/* Operation: Melodica - deep space */
 .melodica-card:hover {
-  background: linear-gradient(
-    135deg,
-    rgba(168, 85, 247, 0.25),
-    rgba(34, 211, 238, 0.12)
-  );
+  background:
+    var(--stars-a),
+    radial-gradient(circle at 25% 30%, rgba(139, 92, 246, 0.35), transparent 55%),
+    radial-gradient(circle at 80% 75%, rgba(34, 211, 238, 0.2), transparent 55%),
+    linear-gradient(135deg, rgba(49, 20, 110, 0.55), rgba(5, 3, 25, 0.9));
   border-color: var(--melodica);
-  box-shadow: 0 0 30px rgba(168, 85, 247, 0.25);
+  box-shadow:
+    0 0 25px rgba(139, 92, 246, 0.45),
+    0 0 60px rgba(34, 211, 238, 0.2);
 }
 
+/* Final Gamble - blood red */
 .finalgamble:hover {
   background: linear-gradient(
     135deg,
@@ -443,24 +493,50 @@ header {
     0 0 60px rgba(127, 29, 29, 0.18);
 }
 
+/* He'll Hunt - hellfire */
 .hellhunt:hover {
-  background: linear-gradient(
-    135deg,
-    rgba(249, 115, 22, 0.22),
-    rgba(15, 23, 42, 0.4)
-  );
+  background:
+    var(--embers),
+    radial-gradient(circle at 50% 120%, rgba(255, 69, 0, 0.6), transparent 60%),
+    radial-gradient(circle at 10% 0%, rgba(153, 27, 27, 0.4), transparent 50%),
+    linear-gradient(135deg, rgba(127, 29, 29, 0.4), rgba(18, 4, 0, 0.9));
   border-color: var(--hell);
-  box-shadow: 0 0 30px rgba(249, 115, 22, 0.22);
+  box-shadow:
+    0 0 25px rgba(255, 69, 0, 0.5),
+    0 0 60px rgba(185, 28, 28, 0.35);
 }
 
-.melodica-card:hover,
-.finalgamble:hover,
-.hellhunt:hover {
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+/* Which Came First? - neon green galaxy */
+.whichcamefirst-card:hover {
+  background:
+    var(--stars-a),
+    radial-gradient(circle at 60% 45%, rgba(57, 255, 20, 0.2), transparent 55%),
+    linear-gradient(135deg, rgba(76, 29, 149, 0.45), rgba(10, 5, 30, 0.85));
+  border-color: var(--wcf);
+  box-shadow:
+    0 0 25px rgba(57, 255, 20, 0.4),
+    0 0 60px rgba(76, 29, 149, 0.35);
+}
+
+/* Bal Arena - coquette pink + cherry red */
+.balarena-card:hover {
+  background:
+    var(--pearls),
+    radial-gradient(circle at 30% 25%, rgba(244, 114, 182, 0.3), transparent 55%),
+    radial-gradient(circle at 80% 85%, rgba(225, 29, 72, 0.4), transparent 55%),
+    linear-gradient(135deg, rgba(190, 18, 60, 0.4), rgba(50, 4, 20, 0.88));
+  border-color: var(--bal);
+  box-shadow:
+    0 0 25px rgba(244, 114, 182, 0.45),
+    0 0 55px rgba(225, 29, 72, 0.4);
+}
+
+.balarena-card:hover p {
+  color: var(--bal-cream);
 }
 
 /* =========================
-   POPUPS
+   POPUPS (default = Melodica space look)
 ========================= */
 
 .popup-overlay {
@@ -485,12 +561,12 @@ header {
   overflow-y: auto;
   padding-right: 6px;
   background: var(--panel);
-  border: 1px solid rgba(168, 85, 247, 0.45);
+  border: 1px solid rgba(139, 92, 246, 0.5);
   border-radius: 24px;
   box-shadow:
-    0 0 30px rgba(168, 85, 247, 0.25),
-    0 0 80px rgba(168, 85, 247, 0.18),
-    0 0 140px rgba(192, 132, 252, 0.08);
+    0 0 30px rgba(139, 92, 246, 0.3),
+    0 0 80px rgba(139, 92, 246, 0.18),
+    0 0 140px rgba(34, 211, 238, 0.08);
   animation: popupOpen 0.35s ease;
   position: relative;
 }
@@ -540,7 +616,7 @@ header {
 
 .info-box {
   background: rgba(255, 255, 255, 0.045);
-  border: 1px solid rgba(168, 85, 247, 0.18);
+  border: 1px solid rgba(139, 92, 246, 0.25);
   border-radius: 18px;
   padding: 20px;
 }
@@ -587,8 +663,8 @@ header {
   font-size: 1rem;
   text-decoration: none;
   box-shadow:
-    0 0 20px rgba(168, 85, 247, 0.35),
-    0 0 40px rgba(168, 85, 247, 0.2);
+    0 0 20px rgba(139, 92, 246, 0.4),
+    0 0 40px rgba(139, 92, 246, 0.2);
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease,
@@ -599,8 +675,8 @@ header {
   transform: translateY(-3px) scale(1.03);
   filter: brightness(1.1);
   box-shadow:
-    0 0 30px rgba(168, 85, 247, 0.45),
-    0 0 60px rgba(168, 85, 247, 0.25);
+    0 0 30px rgba(139, 92, 246, 0.55),
+    0 0 60px rgba(139, 92, 246, 0.3);
 }
 
 .close-btn {
@@ -618,7 +694,7 @@ header {
   z-index: 2;
 }
 
-/* Popup scrollbar */
+/* Default popup scrollbar */
 
 .popup-card::-webkit-scrollbar {
   width: 12px;
@@ -633,7 +709,7 @@ header {
 .popup-card::-webkit-scrollbar-thumb {
   background: linear-gradient(
     180deg,
-    #d8b4fe,
+    var(--melodica-light),
     var(--melodica),
     var(--melodica-dark)
   );
@@ -657,7 +733,25 @@ header {
    PROJECT-SPECIFIC POPUP THEMES
 ========================= */
 
-/* Final Gamble popup */
+/* ---------- Operation: Melodica (deep space) ---------- */
+
+#melodica-popup .popup-card {
+  background:
+    var(--stars-b),
+    radial-gradient(circle at 20% 15%, rgba(139, 92, 246, 0.22), transparent 50%),
+    radial-gradient(circle at 85% 90%, rgba(34, 211, 238, 0.14), transparent 55%),
+    linear-gradient(160deg, #150a35, #04020f);
+}
+
+#melodica-popup .popup-content h3 {
+  color: var(--melodica-light);
+}
+
+#melodica-popup .tech-list span {
+  border: 1px solid rgba(34, 211, 238, 0.25);
+}
+
+/* ---------- Final Gamble (blood red) ---------- */
 
 #finalgamble-popup .popup-card {
   border-color: rgba(239, 68, 68, 0.45);
@@ -701,18 +795,27 @@ header {
   background-clip: content-box;
 }
 
-/* He'll Hunt popup */
+/* ---------- He'll Hunt (hellfire) ---------- */
 
 #hellhunt-popup .popup-card {
-  border-color: rgba(249, 115, 22, 0.45);
+  background:
+    var(--embers),
+    radial-gradient(circle at 50% 110%, rgba(255, 69, 0, 0.35), transparent 60%),
+    radial-gradient(circle at 10% 0%, rgba(153, 27, 27, 0.3), transparent 50%),
+    linear-gradient(160deg, #240606, #0a0100);
+  border-color: rgba(255, 69, 0, 0.6);
   box-shadow:
-    0 0 30px rgba(249, 115, 22, 0.25),
-    0 0 80px rgba(249, 115, 22, 0.18),
-    0 0 140px rgba(234, 88, 12, 0.08);
+    0 0 30px rgba(255, 69, 0, 0.4),
+    0 0 80px rgba(185, 28, 28, 0.3),
+    0 0 140px rgba(255, 69, 0, 0.12);
+}
+
+#hellhunt-popup .popup-content h3 {
+  color: var(--hell-light);
 }
 
 #hellhunt-popup .info-box {
-  border-color: rgba(249, 115, 22, 0.18);
+  border-color: rgba(255, 69, 0, 0.28);
 }
 
 #hellhunt-popup .play-button {
@@ -723,23 +826,125 @@ header {
     var(--hell-dark)
   );
   box-shadow:
-    0 0 20px rgba(249, 115, 22, 0.35),
-    0 0 40px rgba(234, 88, 12, 0.20);
+    0 0 20px rgba(255, 69, 0, 0.5),
+    0 0 40px rgba(185, 28, 28, 0.3);
 }
 
 #hellhunt-popup .play-button:hover {
   box-shadow:
-    0 0 30px rgba(249, 115, 22, 0.45),
-    0 0 60px rgba(234, 88, 12, 0.25);
+    0 0 30px rgba(255, 69, 0, 0.65),
+    0 0 60px rgba(185, 28, 28, 0.4);
 }
 
 #hellhunt-popup .popup-card::-webkit-scrollbar-thumb {
   background: linear-gradient(
     180deg,
-    #fed7aa,
+    var(--hell-light),
     var(--hell),
     var(--hell-dark)
   );
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* ---------- Which Came First? (neon green galaxy) ---------- */
+
+#whichcamefirst-popup .popup-card {
+  background:
+    var(--stars-b),
+    radial-gradient(circle at 50% 100%, rgba(57, 255, 20, 0.12), transparent 60%),
+    linear-gradient(160deg, #1a0b3d, #050212);
+  border-color: rgba(57, 255, 20, 0.55);
+  box-shadow:
+    0 0 30px rgba(57, 255, 20, 0.3),
+    0 0 80px rgba(76, 29, 149, 0.35),
+    0 0 140px rgba(57, 255, 20, 0.1);
+}
+
+#whichcamefirst-popup .info-box {
+  border-color: rgba(57, 255, 20, 0.22);
+}
+
+#whichcamefirst-popup .badge,
+#whichcamefirst-popup .popup-content h3 {
+  color: var(--wcf-light);
+}
+
+#whichcamefirst-popup .play-button {
+  background: linear-gradient(135deg, var(--wcf-light), var(--wcf), var(--wcf-dark));
+  color: #050212;
+  box-shadow:
+    0 0 20px rgba(57, 255, 20, 0.45),
+    0 0 40px rgba(57, 255, 20, 0.25);
+}
+
+#whichcamefirst-popup .play-button:hover {
+  box-shadow:
+    0 0 30px rgba(57, 255, 20, 0.6),
+    0 0 60px rgba(57, 255, 20, 0.35);
+}
+
+#whichcamefirst-popup .popup-card::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--wcf-light), var(--wcf), var(--wcf-dark));
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* ---------- Bal Arena (coquette pink + cherry red) ---------- */
+
+#balarena-popup .popup-card {
+  background:
+    var(--pearls),
+    repeating-linear-gradient(0deg, rgba(244, 114, 182, 0.025) 0 14px, transparent 14px 28px),
+    repeating-linear-gradient(90deg, rgba(244, 114, 182, 0.025) 0 14px, transparent 14px 28px),
+    radial-gradient(circle at 20% 10%, rgba(244, 114, 182, 0.18), transparent 50%),
+    radial-gradient(circle at 85% 95%, rgba(225, 29, 72, 0.35), transparent 55%),
+    linear-gradient(160deg, #3d0a1c, #14030a);
+  border-color: rgba(251, 113, 133, 0.65);
+  box-shadow:
+    0 0 30px rgba(244, 114, 182, 0.35),
+    0 0 80px rgba(225, 29, 72, 0.35),
+    0 0 140px rgba(225, 29, 72, 0.15);
+}
+
+#balarena-popup .popup-content h2,
+#balarena-popup .popup-content h3 {
+  color: #fff;
+}
+
+#balarena-popup .popup-content p,
+#balarena-popup .popup-summary,
+#balarena-popup .info-box p {
+  color: var(--bal-cream);
+}
+
+#balarena-popup .info-box {
+  background: rgba(30, 3, 14, 0.7);
+  border-color: rgba(251, 113, 133, 0.4);
+}
+
+#balarena-popup .tech-list span {
+  background: rgba(225, 29, 72, 0.25);
+  color: var(--bal-cream);
+}
+
+#balarena-popup .play-button {
+  background: linear-gradient(135deg, var(--bal), var(--bal-red), var(--bal-dark));
+  box-shadow:
+    0 0 20px rgba(244, 114, 182, 0.45),
+    0 0 40px rgba(225, 29, 72, 0.4);
+}
+
+#balarena-popup .play-button:hover {
+  box-shadow:
+    0 0 30px rgba(244, 114, 182, 0.6),
+    0 0 60px rgba(225, 29, 72, 0.5);
+}
+
+#balarena-popup .popup-card::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--bal-light), var(--bal), var(--bal-red));
   border-radius: 999px;
   border: 2px solid transparent;
   background-clip: content-box;
@@ -764,7 +969,9 @@ footer {
   border-top: 1px solid var(--soft-border);
 }
 
-/*  -----  ANIMATIONS  -----   */
+/* =========================
+   ANIMATIONS
+========================= */
 
 @keyframes popupOpen {
   from {
@@ -778,7 +985,9 @@ footer {
   }
 }
 
-/*  -----  RESPONSIVE  -----   */
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media (max-width: 800px) {
   .nav-links {
@@ -799,7 +1008,8 @@ footer {
   }
 
   .project-grid,
-  .popup-info-grid {
+  .popup-info-grid,
+  .skills-grid {
     grid-template-columns: 1fr;
   }
 
@@ -826,10 +1036,4 @@ footer {
   .left   { transform: rotateY(-90deg) translateZ(65px); }
   .top    { transform: rotateX(90deg) translateZ(65px); }
   .bottom { transform: rotateX(-90deg) translateZ(65px); }
-
-  @media (max-width: 800px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-}
 }
